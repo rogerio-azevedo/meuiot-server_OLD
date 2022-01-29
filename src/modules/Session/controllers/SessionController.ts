@@ -17,6 +17,6 @@ export default class SessionController {
     //   date2,
     // })
 
-    return response.json({ server: 'ok' })
+    return response.json({ server: 'ok carai!' })
   }
 }
