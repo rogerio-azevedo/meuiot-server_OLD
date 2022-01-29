@@ -1,4 +1,4 @@
-import { Request, Response } from "express"
+import { Request, Response } from 'express'
 
 //import AttendanceAuditService from '../services/AttendanceAuditService'
 
@@ -17,6 +17,6 @@ export default class SessionController {
     //   date2,
     // })
 
-    return response.json({ server: "ok" })
+    return response.json({ server: 'ok' })
   }
 }
