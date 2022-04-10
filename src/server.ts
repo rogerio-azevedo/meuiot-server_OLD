@@ -1,9 +1,11 @@
-import express, { Request, Response, NextFunction } from "express"
+import express, { Request, Response, NextFunction } from 'express'
 
-import cors from "cors"
-import routes from "./shared/routes"
+import { configs } from './config'
 
-import AppError from "./shared/errors/AppError"
+import cors from 'cors'
+import routes from './shared/routes'
+
+import AppError from './shared/errors/AppError'
 
 const app = express()
 
@@ -15,7 +17,7 @@ app.use(routes)
 app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   if (err instanceof AppError) {
     return response.status(err.statusCode).json({
-      status: "error",
+      status: 'error',
       message: err.message,
     })
   }
@@ -23,11 +25,13 @@ app.use((err: Error, request: Request, response: Response, _: NextFunction) => {
   console.error(err)
 
   return response.status(500).json({
-    status: "error",
-    message: "Internal server error",
+    status: 'error',
+    message: 'Internal server error',
   })
 })
 
+app.use(express.static('./public'))
+
 app.listen(6200, () => {
-  console.log("🚀 Server started on port 6200!")
+  console.log('🚀 Server started on port 6200!')
 })
