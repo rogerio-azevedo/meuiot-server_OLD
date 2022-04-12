@@ -28,12 +28,13 @@ model Person {
 }
 
 model PersonContext {
-  id          String    @id @default(uuid())
-  person_id   String
-  profile_id  String
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
-  excluded_at DateTime?
+  id               String    @id @default(uuid())
+  person_id        String
+  profile_id       String
+  parent_person_id String?
+  created_at       DateTime  @default(now())
+  updated_at       DateTime  @updatedAt
+  excluded_at      DateTime?
 
   profile Profile @relation(fields: [profile_id], references: [id])
   person  Person  @relation(fields: [person_id], references: [id])

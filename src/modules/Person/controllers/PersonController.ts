@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 
 //import AttendanceAuditService from '../services/AttendanceAuditService'
 
-export default class SessionController {
+export default class PersonController {
   public async index(request: Request, response: Response): Promise<Response> {
     // const partner = Number(request.query.partner) || undefined
     // const condominium = Number(request.query.condominium) || undefined
@@ -17,6 +17,6 @@ export default class SessionController {
     //   date2,
     // })
 
-    return response.json({ server: 'ok carai!' })
+    return response.json({ server: 'Person carai!' })
   }
 }

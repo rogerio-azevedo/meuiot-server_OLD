@@ -1,10 +1,6 @@
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '../database/prismaClient'
 
 async function seed() {
-  const prisma = new PrismaClient({
-    log: ['query'],
-  })
-
   await prisma.profile.createMany({
     data: [
       { name: 'Administrador', slug: 'admin' },
@@ -13,6 +9,7 @@ async function seed() {
       { name: 'Morador', slug: 'resident' },
       { name: 'Prestador de Serviços', slug: 'sevice' },
       { name: 'Visitante', slug: 'visitor' },
+      { name: 'Zelador', slug: 'caretaker' },
     ],
   })
 }

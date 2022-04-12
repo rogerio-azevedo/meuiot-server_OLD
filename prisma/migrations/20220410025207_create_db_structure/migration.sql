@@ -17,6 +17,7 @@ CREATE TABLE "persons_context" (
     "id" TEXT NOT NULL,
     "person_id" TEXT NOT NULL,
     "profile_id" TEXT NOT NULL,
+    "parent_person_id" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3) NOT NULL,
     "excluded_at" TIMESTAMP(3),
